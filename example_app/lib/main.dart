@@ -1,5 +1,6 @@
 import 'package:example_app/form.dart';
 import 'package:flutter/material.dart';
+import 'package:example_app/page/to_do_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,7 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
+    return 
+    Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
@@ -72,11 +74,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               title: const Text('Form'),
-              onTap: () { 
+              onTap: () {
                 // Route menu ke halaman form
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyFormPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('To Do'),
+              onTap: () {
+                // Route menu ke halaman to do
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ToDoPage()),
                 );
               },
             ),
